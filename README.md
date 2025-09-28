@@ -5,11 +5,16 @@
 [![Tag and Release](https://github.com/filmil/bazel_zlib_foreign/actions/workflows/tag-and-release.yml/badge.svg)](https://github.com/filmil/bazel_libzstd/actions/workflows/tag-and-release.yml)
 [![Test](https://github.com/filmil/bazel_zlib_foreign/actions/workflows/test.yml/badge.svg)](https://github.com/filmil/bazel_libzstd/actions/workflows/test.yml)
 
-This is a [module-compatible version of `libzstd` for bazel][zstdx], but built
-via the [`rules_foreign_cc`][rfcc], not via bazel itself.  This is slightly
-less efficient, but offers a potentially easier build overall.
+This is a module-compatible version of `zlib` for bazel, but built via the
+[`rules_foreign_cc`][rfcc], not via bazel itself.  This is slightly less
+efficient, but offers a potentially easier build overall.
 
-[zstdx]: https://registry.bazel.build/modules/zstd
+You may notice that I have a few similar projects. This is my effort to provide
+hermetic libraries for the upcoming Bazel modules world.
+
+Other modules for the samem library may be available. It is not my intention to
+check for duplicated effort.
+
 [rfcc]: https://registry.bazel.build/modules/rules_foreign_cc
 
 ## Verify the build
