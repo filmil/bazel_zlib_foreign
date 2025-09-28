@@ -1,0 +1,24 @@
+load("@rules_cc//cc:defs.bzl", "cc_test")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "make")
+
+package(default_visibility = ["//visibility:public"])
+
+make(
+    name = "lib",
+    lib_source = "@src//:all_srcs",
+    args = [
+        "V=1 PREFIX=$$INSTALLDIR$$ install",
+    ],
+    #out_binaries = [ "zstd", "zstdgrep", "zstdless"],
+    #out_shared_libs = [ "libzstd.so", "libzstd.so.1", "libzstd.so.1.5.7"],
+    #out_static_libs = [ "libzstd.a" ],
+)
+
+cc_test(
+    name = "test",
+    srcs = [ "test.cc" ],
+    deps = [
+        ":lib",
+    ],
+    size = "small",
+)
